@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         initFruits()
         //指定recyclerView的布局方式
         val layoutManager = LinearLayoutManager(this)
+        layoutManager.orientation = LinearLayoutManager.HORIZONTAL //设置布局的排列方式
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = layoutManager
         val adapter = FruitAdapter(fruitList)
