@@ -1,5 +1,6 @@
 package com.example.applicationdemo5
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,8 +34,12 @@ class FruitAdapter(val fruitList: List<Fruit>) :
         viewHolder.fruitImage.setOnClickListener {
             val position = viewHolder.adapterPosition
             val fruit = fruitList[position]
-            Toast.makeText(parent.context, "you clicked image ${fruit.name}",
+            Toast.makeText(parent.context, "正在打开message",
                 Toast.LENGTH_SHORT).show()
+
+            //跳转到聊天界面
+            val intent = Intent(parent.context, MessageActivity::class.java)
+            parent.context.startActivity(intent)
         }
         return viewHolder
     }
