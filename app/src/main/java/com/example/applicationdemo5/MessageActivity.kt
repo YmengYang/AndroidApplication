@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MessageActivity : AppCompatActivity(), View.OnClickListener {
 
     private val msgList = ArrayList<Msg>()
-    private var adapter: MsgAdapter? = null
+    private lateinit var adapter: MsgAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var send: Button
     private lateinit var inputText: EditText
@@ -41,7 +41,7 @@ class MessageActivity : AppCompatActivity(), View.OnClickListener {
                 if (content.isNotEmpty()) {
                     val msg = Msg(content, Msg.TYPE_SENT)
                     msgList.add(msg)
-                    adapter?.notifyItemInserted(msgList.size - 1) // 当有新消息时， 刷新RecyclerView中的显示
+                    adapter.notifyItemInserted(msgList.size - 1) // 当有新消息时， 刷新RecyclerView中的显示
                     recyclerView.scrollToPosition(msgList.size - 1) // 将RecyclerView定位到最后一行
                     inputText.setText("") // 清空输入框中的内容
                 }

@@ -8,14 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MsgAdapter(val msgList: List<Msg>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class LeftViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val leftMsg: TextView = view.findViewById(R.id.leftMsg0)
-    }
-
-    inner class RightViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val rightMsg: TextView = view.findViewById(R.id.rightMsg)
-    }
-
     override fun getItemViewType(position: Int): Int {
         val msg = msgList[position]
         return msg.type
@@ -46,7 +38,7 @@ class MsgAdapter(val msgList: List<Msg>) : RecyclerView.Adapter<RecyclerView.Vie
         when(holder) {
             is LeftViewHolder -> holder.leftMsg.text = msg.content
             is RightViewHolder -> holder.rightMsg.text = msg.content
-            else -> throw IllegalArgumentException()
+            //else -> throw IllegalArgumentException()
         }
     }
 }
