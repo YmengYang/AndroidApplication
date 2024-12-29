@@ -28,9 +28,15 @@ class FruitAdapter(val fruitList: List<Fruit>) :
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
             val fruit = fruitList[position]
-            Toast.makeText(parent.context, "you clicked view ${fruit.name}",
-                Toast.LENGTH_SHORT).show()
+            if (fruit.name == "Apple") {
+                val intent = Intent(parent.context, FragmentActivity::class.java)
+                parent.context.startActivity(intent)
+            } else {
+                Toast.makeText(parent.context, "you clicked view ${fruit.name}",
+                    Toast.LENGTH_SHORT).show()
+            }
         }
+
         viewHolder.fruitImage.setOnClickListener {
             val position = viewHolder.adapterPosition
             val fruit = fruitList[position]
