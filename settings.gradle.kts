@@ -23,3 +23,4 @@ rootProject.name = "Applicationdemo5"
 include(":app")
 include(":viewpage")
 include(":boradcasttest")
+include(":broadcastbestpractice")
