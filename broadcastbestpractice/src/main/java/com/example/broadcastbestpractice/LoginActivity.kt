@@ -1,5 +1,6 @@
 package com.example.broadcastbestpractice
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,14 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val prefs = getPreferences(Context.MODE_PRIVATE)
+        val isRemember = prefs.getBoolean("remember_password", false)
+        if (isRemember) {
+            val account = prefs.getString("account", "")
+            val password = prefs.getString("password", "")
+            accountEdit.setText(password)
+        }
+
         login = findViewById(R.id.login)
         login.setOnClickListener {
             accountEdit = findViewById(R.id.accountEdit)
