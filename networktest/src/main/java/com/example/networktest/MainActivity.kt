@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         sendRequestButton = findViewById(R.id.sendRequestBtn)
         sendRequestButton.setOnClickListener {
-            Log.d("MainActivity", "sendRequest")
             sendRequestWithOkHttp()
         }
     }
@@ -30,13 +29,9 @@ class MainActivity : AppCompatActivity() {
             try {
                 val client = OkHttpClient()
                 val request = Request.Builder().url("https://www.baidu.com").build()
-                Log.d("MainActivity", "$request: ")
                 val response = client.newCall(request).execute()
-                Log.d("MainActivity", "$response ")
                 val responseData = response.body?.string()
-                Log.d("MainActivity", "$responseData ")
                 if (responseData != null) {
-                    Log.d("MainActivity", "sendRequestWithOkHttp: ")
                     showResponse(responseData)
                 }
             } catch (e: Exception) {
@@ -50,8 +45,6 @@ class MainActivity : AppCompatActivity() {
             // 在这里进行UI操作，将结果显示到界面上
             responseText = findViewById(R.id.responseText)
             responseText.text = response
-            Log.d("MainActivity", "showResponse: ")
         }
     }
-
 }
