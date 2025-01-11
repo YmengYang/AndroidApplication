@@ -19,16 +19,16 @@
       <SelectionState runConfigName="broadcastbestpractice">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="filepersistencetest">
+      <SelectionState runConfigName="threadtest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="sharedpreferencestest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="databasetest">
+      <SelectionState runConfigName="servicetest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="threadtest">
+      <SelectionState runConfigName="databasetest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
